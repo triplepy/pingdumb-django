@@ -47,6 +47,7 @@ LOCAL_APPS = (
     # custom users app
     'pingdumb.users.apps.UsersConfig',
     # Your stuff: custom apps go here
+    'checker'
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
