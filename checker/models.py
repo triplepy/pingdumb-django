@@ -1,3 +1,4 @@
+from django.contrib.postgres.fields import ArrayField
 from django.db import models
 
 from model_utils.models import TimeStampedModel
@@ -9,11 +10,4 @@ class Site(TimeStampedModel):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=80)
     url = models.CharField(max_length=65536)
-    status = models.ManyToManyField(HttpStatus)
-
-
-class HttpStatus(models.Model):
-    code = models.IntegerField
-    message = models.CharField(max_length=2048)
-
-
+    status_list = ArrayField(models.CharField(max_length=3))
